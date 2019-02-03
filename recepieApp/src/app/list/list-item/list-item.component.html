@@ -1,3 +1,9 @@
-<p>
-  list-item works!
-</p>
+<div class="mb-4">
+  <button type="button" class="btn btn-warning"
+     (click)="item.show=!item.show">{{item.recipe}}</button>
+  <ul class="mt-2" *ngIf="item.show">
+    <li *ngFor="let ing of item.ingredients">
+      {{ing}}
+    </li>
+  </ul>
+</div>
