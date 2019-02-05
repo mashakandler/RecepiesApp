@@ -1,3 +1,6 @@
 <div>
-  <input #filter type="text" (change)="updateList(filter.value)">
+    {{show}} <br/>
+    {{object?.exists}}
+    <div [class.special]="show">This one is not so special</div>
+    <input #filterRef type="text" (change)="show=true;updateList(filterRef.value)">
 </div>

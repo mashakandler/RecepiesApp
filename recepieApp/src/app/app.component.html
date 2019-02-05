@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <app-list></app-list> -->
 <div class="p-3">
+    <img [src]="imgUrl" [width]="imgWidth"/>
     <app-filter (filter)="filterHandler($event)"></app-filter>
     <app-list [items]="filter ? filteredList : recepiesList"></app-list>
 
+    <app-contact-form></app-contact-form>
     <router-outlet></router-outlet>
         
 </div>

@@ -1,0 +1,17 @@
+<form *ngIf="!show" (submit)="submitHandler($event)">
+  <!-- <label>
+    Name: <input [value]="name" type="text" #nameRef required minlength="5" 
+    (input)="name = nameRef.value"/></label> -->
+  <label>
+    Name: <input type="text" 
+    [(ngModel)]="name" name="name"
+     required minlength="5"/>
+  </label>
+  <div *ngIf="!name || name.length < 5">This field is required. Min  length 5 chars</div>
+  <label>Phone: <input type="text" #phoneRef required /></label>
+  <label>Email: <input type="email" #emailRef required /></label>
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="show">
+  <h1>Thank You</h1>
+</div>
