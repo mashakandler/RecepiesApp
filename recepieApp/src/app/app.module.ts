@@ -15,16 +15,9 @@ import DataService from './../services/service.service';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import RecipeIndex from 'src/mock/rcepies';
+import { AppRouting } from './routes';
 
 
-const appRoutes: Routes = [ 
-  { path: 'list', component: ListComponent, data: { items:RecipeIndex } },
-	{ path: 'page1', component: Page1Component }, 
-  { path: 'page2', component: Page2Component },
-  // { path: '**', component: ListComponent }
-]; 
-
-export const routing = RouterModule.forRoot(appRoutes);
 
 
 @NgModule({
@@ -42,7 +35,7 @@ export const routing = RouterModule.forRoot(appRoutes);
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routing
+    AppRouting
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
