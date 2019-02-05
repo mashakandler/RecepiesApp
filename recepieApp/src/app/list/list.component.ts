@@ -8,8 +8,10 @@ import Recepie from 'src/models/recepie';
 })
 export class ListComponent implements OnInit {
 
-  @Input() items: Recepie[]
-  constructor() { }
+  //@Input() items: Recepie[]
+  constructor() { 
+    debugger
+  }
 
   ngOnInit() {
   }

@@ -48,7 +48,6 @@ export class AppComponent {
     
     this.service.arrObsarvable.subscribe(next =>{
         this.arr = next;
-        debugger;
     });
 
 

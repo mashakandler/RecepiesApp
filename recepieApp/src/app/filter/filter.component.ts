@@ -17,7 +17,6 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
     this.service.arrObsarvable.subscribe(next =>{
       this.arr = next;
-      debugger;
   });
   }
 

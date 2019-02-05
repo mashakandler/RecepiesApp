@@ -1,11 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <app-list></app-list> -->
 <div class="p-3">
-    <img [src]="imgUrl" [width]="imgWidth"/>
+    <!-- <img [src]="imgUrl" [width]="imgWidth"/>
     <app-filter (filter)="filterHandler($event)"></app-filter>
     <app-list [items]="filter ? filteredList : recepiesList"></app-list>
-
-    <app-contact-form></app-contact-form>
-    <router-outlet></router-outlet>
     <button #buttonElem>create event</button>
+    <app-contact-form></app-contact-form> -->
+    <nav>    
+        <a routerLink="/page1" routerLinkActive="active">page1</a>    
+        <a routerLink="/page2" routerLinkActive="active">page2</a>  
+        </nav>  
+    
+    <router-outlet></router-outlet>
+
 </div>
