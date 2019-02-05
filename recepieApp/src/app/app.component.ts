@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import Recepie from 'src/models/recepie';
 import RecipeIndex from '../mock/rcepies';
 import DataService from 'src/services/service.service';
+import { Observable,from,fromEvent, interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import DataService from 'src/services/service.service';
 })
 export class AppComponent {
   
+  @ViewChild("buttonElem") btn: ElementRef;
   imgUrl = "https://www.sela.co.il/Media/image/home/logoSiteIcon.svg";
   imgWidth = 300;
 
@@ -27,10 +29,22 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.service.currentMessage.subscribe(message =>{
-        debugger
-      })
-      this.service.changeMessage(4)
+    // let inter= from(interval(1000))
+
+    // inter.subscribe((item)=>{
+    //   console.log(item)
+    // });
+
+    // let clickStream$=fromEvent(this.btn.nativeElement, "click")
+    
+    // clickStream$.subscribe((item)=>{
+    //   console.log(item)
+    // });
+    
+    // this.service.currentMessage.subscribe(message =>{
+    //     debugger
+    //   })
+    //   this.service.changeMessage(4)
       
   }
 
