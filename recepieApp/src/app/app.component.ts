@@ -21,14 +21,19 @@ export class AppComponent {
   filteredList: Recepie[];
   numbers: number[];
   filter:String = "";
+  data: any[];
+  arr: number[];
 
   constructor(private service: DataService){
     this.recepiesList = RecipeIndex;
-   
     
   }
 
   ngOnInit() {
+
+    this.service.getData().subscribe((data)=>{
+        this.data = data;
+    })
     // let inter= from(interval(1000))
 
     // inter.subscribe((item)=>{
@@ -41,10 +46,12 @@ export class AppComponent {
     //   console.log(item)
     // });
     
-    // this.service.currentMessage.subscribe(message =>{
-    //     debugger
-    //   })
-    //   this.service.changeMessage(4)
+    this.service.arrObsarvable.subscribe(next =>{
+        this.arr = next;
+        debugger;
+    });
+
+
       
   }
 

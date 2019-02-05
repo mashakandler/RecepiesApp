@@ -1,17 +1,30 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export default class DataService {
 
-    private messageSource = new BehaviorSubject([1,2,3]);
-    currentMessage = this.messageSource.asObservable();
+    private arr = [1,2,3];
+    private arrSource = new BehaviorSubject(this.arr);
+    arrObsarvable = this.arrSource.asObservable();
 
-    constructor() { }
+    constructor(private http:HttpClient) {
 
-    changeMessage(num) {
+    }
+
+    getData(): Observable<any> {
+        return this.http.get('https://jsonplaceholder.typicode.com/users')
+
+    }
+    postData(data): Observable<any> {
+        return this.http.post('https://jsonplaceholder.typicode.com/users', data)
+
+    }
+
+    updateArr(newArr) {
         //debugger
         //var arr = this.messageSource.value;
-        this.messageSource.next(num)
+        this.arrSource.next(newArr)
     }
 }
